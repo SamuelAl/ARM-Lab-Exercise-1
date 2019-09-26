@@ -1,0 +1,82 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;
+    2 00000000         ; CSU11021 Introduction to Computing I 2019/2020
+    3 00000000         ; Convert a sequence of ASCII digits to the value they r
+                       epresent
+    4 00000000         ;
+    5 00000000         
+    6 00000000                 AREA             RESET, CODE, READONLY
+    7 00000000                 ENTRY
+    8 00000000         
+    9 00000000 E3A01032        LDR              R1, ='2'    ; Load R1 with ASCI
+                                                            I code for symbol '
+                                                            2'
+   10 00000004 E3A02030        LDR              R2, ='0'    ; Load R2 with ASCI
+                                                            I code for symbol '
+                                                            0'
+   11 00000008 E3A03033        LDR              R3, ='3'    ; Load R3 with ASCI
+                                                            I code for symbol '
+                                                            3'
+   12 0000000C E3A04034        LDR              R4, ='4'    ; Load R4 with ASCI
+                                                            I code for symbol '
+                                                            4'
+   13 00000010         
+   14 00000010 E2411030        SUB              R1, R1, #0x30 ; Convert values 
+                                                            to number form
+   15 00000014 E2422030        SUB              R2, R2, #0x30
+   16 00000018 E2433030        SUB              R3, R3, #0x30
+   17 0000001C E2444030        SUB              R4, R4, #0x30
+   18 00000020         
+   19 00000020 E1A00004        MOV              R0, R4
+   20 00000024         
+   21 00000024 E3A05FFA        LDR              R5, =1000
+   22 00000028 E0010195        MUL              R1, R5, R1  ; x10 position
+   23 0000002C E0810000        ADD              R0, R1, R0
+   24 00000030         
+   25 00000030 E3A05064        LDR              R5, =100
+   26 00000034 E0020295        MUL              R2, R5, R2  ; x100 position
+   27 00000038 E0820000        ADD              R0, R2, R0
+   28 0000003C         
+   29 0000003C E3A0500A        LDR              R5, =10
+   30 00000040 E0030395        MUL              R3, R5, R3  ; x1000 position
+   31 00000044 E0830000        ADD              R0, R3, R0
+   32 00000048         
+   33 00000048         
+   34 00000048 EAFFFFFE 
+                       STOP    B                STOP
+   35 0000004C         
+   36 0000004C                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\lab-1-5-asciivalue.d -o.\objects\lab-1-5-asciivalue.o -IC:\Keil_v5\ARM\R
+V31\INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine
+="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 528" --list=.\listings\lab
+-1-5-asciivalue.lst Lab-1-5-AsciiValue.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 6 in file Lab-1-5-AsciiValue.s
+   Uses
+      None
+Comment: RESET unused
+STOP 00000048
+
+Symbol: STOP
+   Definitions
+      At line 34 in file Lab-1-5-AsciiValue.s
+   Uses
+      At line 34 in file Lab-1-5-AsciiValue.s
+Comment: STOP used once
+2 symbols
+334 symbols in table
