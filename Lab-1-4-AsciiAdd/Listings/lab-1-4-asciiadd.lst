@@ -1,0 +1,61 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000         ;
+    2 00000000         ; CSU11021 Introduction to Computing I 2019/2020
+    3 00000000         ; Adding the values represented by ASCII digit symbols
+    4 00000000         ;
+    5 00000000         
+    6 00000000                 AREA             RESET, CODE, READONLY
+    7 00000000                 ENTRY
+    8 00000000         
+    9 00000000 E3A01032        LDR              R1, ='2'    ; Load R1 with ASCI
+                                                            I code for symbol '
+                                                            2'
+   10 00000004 E3A02034        LDR              R2, ='4'    ; Load R2 with ASCI
+                                                            I code for symbol '
+                                                            4'
+   11 00000008         
+   12 00000008 E2411030        SUB              R1, R1, #0x30 ; Convert values 
+                                                            to number form
+   13 0000000C E2422030        SUB              R2, R2, #0x30
+   14 00000010 E0810002        ADD              R0, R1, R2  ; Add values 
+   15 00000014 E2800030        ADD              R0, R0, #0x30 ; Convert back to
+                                                             ASCII
+   16 00000018         
+   17 00000018 EAFFFFFE 
+                       STOP    B                STOP
+   18 0000001C         
+   19 0000001C                 END
+Command Line: --debug --xref --diag_suppress=9931 --apcs=interwork --depend=.\o
+bjects\lab-1-4-asciiadd.d -o.\objects\lab-1-4-asciiadd.o -IC:\Keil_v5\ARM\RV31\
+INC -IC:\Keil_v5\ARM\CMSIS\Include -IC:\Keil_v5\ARM\INC\Philips --predefine="__
+EVAL SETA 1" --predefine="__UVISION_VERSION SETA 528" --list=.\listings\lab-1-4
+-asciiadd.lst Lab-1-4-AsciiAdd.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+RESET 00000000
+
+Symbol: RESET
+   Definitions
+      At line 6 in file Lab-1-4-AsciiAdd.s
+   Uses
+      None
+Comment: RESET unused
+STOP 00000018
+
+Symbol: STOP
+   Definitions
+      At line 17 in file Lab-1-4-AsciiAdd.s
+   Uses
+      At line 17 in file Lab-1-4-AsciiAdd.s
+Comment: STOP used once
+2 symbols
+334 symbols in table
