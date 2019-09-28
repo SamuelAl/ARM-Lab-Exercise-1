@@ -19,7 +19,7 @@
 	MOV R0, R4 
 	
 	LDR	R5, =1000
-	MUL R1, R5, R1 		; x10 position
+	MUL R1, R5, R1 		; x1000 position
 	ADD R0, R1, R0
 	
 	LDR R5, =100
@@ -27,7 +27,7 @@
 	ADD R0, R2, R0
 	
 	LDR R5, =10
-	MUL	R3, R5, R3		; x1000 position
+	MUL	R3, R5, R3		; x10 position
 	ADD R0, R3, R0
 	
 
