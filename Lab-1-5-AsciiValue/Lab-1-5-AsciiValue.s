@@ -27,7 +27,7 @@
 	ADD R0, R2, R0
 	
 	LDR R5, =10
-	MUL	R3, R5, R3		; x10 position
+	MUL R3, R5, R3		; x10 position
 	ADD R0, R3, R0
 	
 
